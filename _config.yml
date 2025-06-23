@@ -110,3 +110,7 @@ deploy:
   repo: git@github.com:30515245/zhblog.git  # 替换为你的仓库URL
   branch: gh-pages  # GitHub/GitLab使用gh-pages分支
   # 如果使用Gitee，分支通常为master
+
+aplayer:
+  meting: true
+  asset_inject: false

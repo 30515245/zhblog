@@ -20,7 +20,7 @@ nav:
 menu:
   首页: / || fas fa-home
   标签: /tags/ || fas fa-tags
-  文档||fas fa-book:
+  页面||fas fa-book:
     归档: /archives/ || fas fa-archive
     分类: /categories/ || fas fa-folder-open
     图库: /tuku/ || fas fa-images
@@ -874,12 +874,12 @@ clickShowText:
 # --------------------------------------
 # 灯箱设置
 # --------------------------------------
-
+lightbox: medium_zoom  # 是否启用灯箱效果
 # 选择: fancybox / medium_zoom
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # 如果你不需要灯箱功能，请留空
-lightbox:
+
 
 # --------------------------------------
 # 标签插件设置
@@ -950,15 +950,21 @@ note:
 
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   # 排除指定页面不使用 pjax，例如 '/music/'
   exclude:
     # - /xxxxxx/
 
 # 注入 css 和脚本 (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
+
+
+inject:
+  head:
+  bottom:
+    - <div class="aplayer no-destroy" data-id="13590986654" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
 
 # Snackbar - 吐司通知
 # https://github.com/polonel/SnackBar
@@ -1016,16 +1022,17 @@ css_prefix: true
 
 # 注入
 # 在头部 ( '</head>' 标签之前) 和底部 ( '</body>' 标签之前) 插入代码
-inject:
-  head:
-    # - <link rel="stylesheet" href="/xxx.css">
-  bottom:
-    # - <script src="xxxx"></script>
 
 # CDN 设置
 # 除非你知道它们的工作原理，否则不要修改以下设置
 CDN:
-  # 内部和第三方脚本的 CDN 提供商
+  # ... existing code ...
+  option:
+    # 保留原有的注释内容
+    # abcjs_basic_js:
+    # activate_power_mode:
+    # ... 其他原有注释 ...
+    # 添加以下三行（取消注释并填入 CDN 链接）
   # 两者的选项: local/jsdelivr/unpkg/cdnjs/custom
   # 注意: 开发版本的内部脚本只能使用 'local'
   # 注意: 当将第三方脚本设置为 'local' 时，你需要安装 hexo-butterfly-extjs
@@ -1037,9 +1044,12 @@ CDN:
 
   # 自定义格式
   # 例如: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format:
+# APlayer Options (这是主题级别的 APlayer 配置)
+# 在主题配置中启用 meting
 
-  option:
+custom_format:
+
+
     # abcjs_basic_js:
     # activate_power_mode:
     # algolia_js:

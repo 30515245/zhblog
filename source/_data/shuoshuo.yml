@@ -1,27 +1,30 @@
-- author: Butterfly
-  avatar: https://butterfly.js.org/img/avatar.png
+- author: 蝴蝶
+  avatar: https://blogtc.30515245.xyz/20250613104116053.png
   date: 2024-06-21 23:33:26
   key: key-1
   content: |
-    This is a sample content for **Author 1**.
-    ![Sample Image](https://via.placeholder.com/150)
+   **中国**在新能源汽车领域持续领跑全球，产销量屡创新高。2024年上半年，新能源汽车市场渗透率进一步提升，多款新车型凭借先进技术和亲民价格受到消费者热捧。
+   ![新能源汽车](https://img.icons8.com/ios-filled/50/000000/electric-car.png)
   tags:
-    - tags1
-    - tags2
-- author: Butterfly
-  avatar: https://butterfly.js.org/img/avatar.png
+   - 新能源汽车
+   - 市场动态
+- author: 蝴蝶
+  avatar: https://blogtc.30515245.xyz/20250613104116053.png
   date: 2024-06-20 23:33:26
   key: key-2
   content: |
-    This is a sample content for **Author 2**.
-    ![Sample Image](https://via.placeholder.com/150)
+   **欧洲**多国正大力投资可再生能源项目，特别是风能和太阳能。随着能源转型政策的推进，欧洲的电网将更加依赖清洁能源，减少对传统化石燃料的依赖。
+   ![风力发电](https://img.icons8.com/ios-filled/50/000000/wind-turbine.png)
   tags:
-    - tag2
-    - tag3
-
-- author: Butterfly
-  avatar: https://butterfly.js.org/img/avatar.png
+   - 可再生能源
+   - 欧洲能源
+- author: 蝴蝶
+  avatar: https://blogtc.30515245.xyz/20250613104116053.png
   date: 2024-06-19 23:33:26
   key: key-3
   content: |
-    This is a sample content for **Author 3**.
+   **美国**政府推出一系列新政策，旨在加速清洁能源技术的研发和部署。储能技术，尤其是电池储能，成为投资热点，有望解决可再生能源的间歇性问题。
+   ![电池储能](https://img.icons8.com/ios-filled/50/000000/battery-charge.png)
+  tags:
+   - 清洁能源技术
+   - 储能发展

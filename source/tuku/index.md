@@ -1,9 +1,10 @@
 ---
+title: 产业新能源的可视化
 top_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
 ---
 
 <div class="gallery-group-main">
-{% galleryGroup '壁紙' '收藏的一些壁紙' '/Gallery/wallpaper' https://i.loli.net/2019/11/10/T7Mu8Aod3egmC4Q.png %}
-{% galleryGroup '漫威' '關於漫威的圖片' '/Gallery/marvel' https://i.loli.net/2019/12/25/8t97aVlp4hgyBGu.jpg %}
-{% galleryGroup 'OH MY GIRL' '關於OH MY GIRL的圖片' '/Gallery/ohmygirl' https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg %}
+{% galleryGroup '新能源汽车' '探索未来出行，电动汽车与智能驾驶' '/tuku/gf' https://www.infoobs.com/uploads/220511/1652250921.png %}
+{% galleryGroup '可再生能源' '风能、太阳能、水能，构建绿色地球' '//tuku/gf' https://www.infineon.com/export/sites/default/_images/about-infineon/stories/Erneuerbare-Energien/Erneuerbare-Energien-Headebild-lowres.jpg_1758632412.jpg %}
+{% galleryGroup '能源储存技术' '电池、氢能与储能解决方案' '//tuku/gf' https://www.infineon.com/export/sites/default/_images/about-infineon/energy-efficiency-technologies/Energy-Efficiency-Kampagne_Headerbanner_Energy-storage-systems_768x432px.jpg_1459425146.jpg %}
 </div>
