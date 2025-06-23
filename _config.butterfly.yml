@@ -19,10 +19,9 @@ nav:
 
 menu:
   首页: / || fas fa-home
-  置顶: /sticky/ || fas fa-thumb-tack
+  标签: /tags/ || fas fa-tags
   文档||fas fa-book:
     归档: /archives/ || fas fa-archive
-    标签: /tags/ || fas fa-tags
     分类: /categories/ || fas fa-folder-open
     图库: /tuku/ || fas fa-images
     说说: /shuoshuo/ || fas fa-comment
@@ -112,14 +111,14 @@ cover:
 
 # 替换损坏的图片
 error_img:
-  flink: https://blogtc.30515245.xyz/20250612142104764.png
-  post_page: https://blogtc.30515245.xyz/20250612142104764.png
+  flink: https://blogtc.30515245.xyz/20250613104116053.png
+  post_page: https://blogtc.30515245.xyz/20250613104116053.png
 
 # 简单的 404 页面
 error_404:
   enable: true
   subtitle: '页面没找到'
-  background: https://blogtc.30515245.xyz/20250612142104764.png
+  background: https://blogtc.30515245.xyz/20250613104116053.png
 
 post_meta:
   # 主页
@@ -184,7 +183,7 @@ subtitle:
 # 5: 信息显示在封面上
 # 6: 瀑布流布局 - 封面在上，信息在下
 # 7: 瀑布流布局 - 信息显示在封面上
-index_layout: 7
+index_layout: 3
 
 # 在主页显示文章简介
 # 1: 描述
@@ -299,7 +298,7 @@ aside:
       link: https://blog.30515245.xyz  # 按钮链接到指定的 GitHub 页面
   card_announcement:
     enable: true  # 启用公告卡片
-    content: 这是我的博客  # 公告卡片内容为“这是我的博客”
+    content: 欢迎来到零碳时代  # 公告卡片内容为“这是我的博客”
   card_recent_post:
     enable: true  # 启用最近文章卡片
     limit: 5  # 显示最近文章的数量，设置为 0 将显示全部
@@ -416,7 +415,7 @@ copy:
 
 # 需要安装 hexo-wordcount 插件
 wordcount:
-  enable: false
+  enable: true
   # 在文章元数据中显示文章字数
   post_wordcount: true
   # 在文章元数据中显示阅读文章所需时间
