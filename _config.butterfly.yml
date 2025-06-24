@@ -202,7 +202,7 @@ index_post_content:
 toc:
   post: true  # 是否在文章中显示目录
   page: false  # 是否在页面中显示目录
-  number: true  # 是否为目录添加编号
+  number: false  # 是否为目录添加编号
   expand: false  # 是否展开目录
   # 仅适用于文章
   style_simple: false  # 文章目录是否使用简单样式
@@ -512,7 +512,7 @@ comments:
   # 如果你不需要评论功能，请留空
   # 选择: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # 两个评论系统的格式 : Disqus,Waline
-  use: Valine  # 选择要使用的评论系统，可留空禁用评论功能
+  use: gitalk,valine  # 选择要使用的评论系统，可留空禁用评论功能
   # 在按钮旁边显示评论系统名称
   text: true  # 设为 true 则在按钮旁显示评论系统名称
   # 懒加载: 当评论元素进入浏览器视口时加载评论系统。
@@ -545,12 +545,14 @@ livere:
 # Gitalk
 # https://github.com/gitalk/gitalk
 gitalk:
-  client_id:  # Gitalk 的客户端 ID
-  client_secret:  # Gitalk 的客户端密钥
-  repo:  # Gitalk 关联的仓库名称
-  owner:  # Gitalk 仓库的所有者
-  admin:  # Gitalk 管理员列表
+  client_id: Ov23liJutLKAugcK0j4R # Gitalk 的客户端 ID
+  client_secret: a6963493b9f811bc087ac444559a8db94c2a1453 # Gitalk 的客户端密钥
+  repo: pinglen # Gitalk 关联的仓库名称
+  owner: 30515245  # Gitalk 仓库的所有者
+  admin: 30515245 # Gitalk 管理员列表
+  redirect_uri: https://blog.30515245.xyz
   option:  # Gitalk 的其他配置选项
+
 
 # Valine
 # https://valine.js.org
@@ -763,13 +765,13 @@ mask:
 
 # 加载动画
 preloader:
-  enable: false
+  enable: true
   # 来源
   # 1. 全屏加载动画
   # 2. pace (进度条)
-  source: 1
+  source: 2
   # pace 主题 (请参阅 https://codebyzach.github.io/pace/)
-  pace_css_url:
+  pace_css_url: https://codebyzach.github.io/pace/
 
 # 页面过渡效果
 enter_transitions: true
