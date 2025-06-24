@@ -12,7 +12,7 @@
     - name: 晶科能源
       link: https://www.jinkosolar.com/
       avatar: https://www.jinkosolar.com/favicon.ico
-      descr: 全球领先的光伏组件制造商
+      descr: TOPCon技术领军者
 
 - class_name: 风电头部品牌
   class_desc: 国内风电设备及运营龙头
@@ -42,9 +42,9 @@
       avatar: https://www.starcharge.cn/favicon.ico
       descr: 智能充电平台服务商
     - name: 京能新能源
-      link: http://www.jingnengnewenergy.com/
-      avatar: http://www.jingnengnewenergy.com/favicon.ico
-      descr: 高压超充技术标杆企业
+      link: https://www.jingnengpower.com/
+      avatar: https://www.jingnengpower.com/favicon.ico
+      descr: 综合能源服务商
 
 - class_name: 储能头部品牌
   class_desc: 国内储能系统解决方案提供商
