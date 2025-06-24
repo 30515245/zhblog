@@ -2,14 +2,10 @@
 # Hexo Butterfly 主题配置
 # 如有任何问题，请参考文档
 # 中文文档: https://butterfly.js.org/
-# 英文文档: https://butterfly.js.org/en/
 # ======================================
-
-
 # --------------------------------------
 # 导航栏设置
 # --------------------------------------
-
 nav:
   # 导航栏 Logo 图片
   logo: https://blogtc.30515245.xyz/20250612142104764.png
@@ -19,10 +15,11 @@ nav:
 
 menu:
   首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   页面||fas fa-book:
-    归档: /archives/ || fas fa-archive
     分类: /categories/ || fas fa-folder-open
+    标签: /tags/ || fas fa-tags
     图库: /tuku/ || fas fa-images
     说说: /shuoshuo/ || fas fa-comment
     友链: /link/ || fas fa-link
