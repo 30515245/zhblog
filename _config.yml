@@ -2,14 +2,9 @@ title: 零碳时代  # 网站的标题
 author: 零碳时代
 subtitle: '绿色能源一站式服务伙伴'  # 网站的副标题
 description: '绿色能源一站式服务伙伴'  # 网站的描述信息，用于搜索引擎优化等场景
-keywords:  # 网站的关键词，用于搜索引擎优化
-- 零碳
-- 绿色
-- 能源
-- 一站式
 language: zh-CN  # 网站使用的语言，这里设置为中文（中国大陆）
-timezone: ''  # 网站的时区设置，为空表示使用默认时区
-
+timezone: # 网站的时区设置，为空表示使用默认时区
+# themes/你的主题/_config.yml
 url: https://blog.30515245.xyz
 root: /
 permalink: posts/:abbrlink.html  # 文章永久链接的格式

@@ -5,6 +5,7 @@ nav:
   logo: https://blogtc.30515245.xyz/20250612142104764.png  # 导航栏 Logo 图片地址
   display_title: true  # 是否显示标题
   fixed: false  # 导航栏是否固定
+
 menu:
   首页: / || fas fa-home  # 首页导航链接及图标
   标签: /tags/ || fas fa-tags  # 标签导航链接及图标
@@ -220,7 +221,7 @@ aside:
   mobile: true  # 在移动端显示侧边栏
   position: right  # 侧边栏位置为右侧，可选值：left / right
   display:
-    archive: false  # 在侧边栏显示归档
+    archive: true  # 在侧边栏显示归档
     tag: true  # 在侧边栏显示标签
     category: true  # 在侧边栏显示分类
   card_author: 
@@ -259,7 +260,7 @@ aside:
     order: 1  # 排序顺序，1 为升序; -1 为降序
     sort_order:  # 排序顺序，可留空按默认规则排序
   card_archives:
-    enable: true  # 启用归档卡片
+    enable: false  # 启用归档卡片
     type: monthly  # 归档类型，可选值：monthly / yearly
     format: MMMM YYYY  # 归档日期格式，例如: YYYY年MM月
     order: -1  # 排序顺序，1 为升序; -1 为降序
@@ -967,7 +968,7 @@ CDN:
 
   # 自定义格式
   # 例如: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format:
+custom_format:
 
     # abcjs_basic_js:
     # activate_power_mode:
