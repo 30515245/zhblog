@@ -12,7 +12,7 @@ menu:
   页面||fas fa-book:  # 页面子菜单
     归档: /archives/ || fas fa-archive  # 归档导航链接及图标
     分类: /categories/ || fas fa-folder-open  # 分类子菜单链接及图标
-    图库: /tuku/ || fas fa-images  # 图库子菜单链接及图标
+    图库: /album/ || fas fa-images  # 图库子菜单链接及图标
     说说: /shuoshuo/ || fas fa-comment  # 说说子菜单链接及图标
     友链: /link/ || fas fa-link  # 友链子菜单链接及图标
   留言板: /message/ || fas fa-comments  # 留言板导航链接及图标
