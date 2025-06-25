@@ -10,12 +10,17 @@ keywords:  # 网站的关键词，用于搜索引擎优化
 language: zh-CN  # 网站使用的语言，这里设置为中文（中国大陆）
 timezone: ''  # 网站的时区设置，为空表示使用默认时区
 
-url: http://blog.30515245.xyz  # 网站的访问地址
-permalink: :year/:month/:day/:title/  # 文章永久链接的格式
+url: https://blog.30515245.xyz
+root: /
+permalink: posts/:abbrlink.html  # 文章永久链接的格式
 permalink_defaults:  # 永久链接的默认设置，此处为空表示使用默认值
 pretty_urls:  # 美化永久链接的设置
   trailing_index: true  # 设置为 false 可从永久链接中移除尾随的 'index.html'
   trailing_html: true  # 设置为 false 可从永久链接中移除尾随的 '.html'
+abbrlink:
+  alg: crc16   # 可选 crc16 或 crc32
+  rep: dec     # 可选 dec（十进制）或 hex（十六进制）
+
 
 # Directory  # 目录相关配置的起始注释
 source_dir: source  # 源文件目录，存放博客的原始文件，如文章、图片等
@@ -90,3 +95,4 @@ deploy:
 aplayer:
   meting: true  # 是否启用 Meting 功能
   asset_inject: false  # 是否自动注入资源
+
