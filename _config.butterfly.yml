@@ -7,11 +7,10 @@ nav:
   fixed: false  # 导航栏是否固定
 menu:
   首页: / || fas fa-home  # 首页导航链接及图标
-  归档: /archives/ || fas fa-archive  # 归档导航链接及图标
   标签: /tags/ || fas fa-tags  # 标签导航链接及图标
   页面||fas fa-book:  # 页面子菜单
+    归档: /archives/ || fas fa-archive  # 归档导航链接及图标
     分类: /categories/ || fas fa-folder-open  # 分类子菜单链接及图标
-    标签: /tags/ || fas fa-tags  # 标签子菜单链接及图标
     图库: /tuku/ || fas fa-images  # 图库子菜单链接及图标
     说说: /shuoshuo/ || fas fa-comment  # 说说子菜单链接及图标
     友链: /link/ || fas fa-link  # 友链子菜单链接及图标
