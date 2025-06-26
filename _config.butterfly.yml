@@ -222,7 +222,7 @@ post_copyright:
 # Word Count 插件配置（需安装 hexo-wordcount）
 # --------------------------------------
 wordcount:
-  enable: false         # 全局开关：启用/禁用插件
+  enable: true         # 全局开关：启用/禁用插件
   post_wordcount: true  # 在文章 Meta 显示字数统计
   min2read: true        # 在文章 Meta 显示预计阅读时长
   total_wordcount: true # 在侧边栏 WebInfo 显示全站总字数
@@ -414,10 +414,10 @@ reward:
   enable: true           # 全局开关：启用/禁用打赏功能
   text: ""               # 打赏说明文字，留空则不显示
   QR_code:               # 二维码列表
-    - img: "/img/wechat.jpg"   # 微信二维码图片路径
+    - img: "/img/wx.png"   # 微信二维码图片路径
       link: ""                # 点击二维码后跳转链接（可选）
       text: "微信"             # 支付方式文案
-    - img: "/img/alipay.jpg"   # 支付宝二维码图片路径
+    - img: "/img/tb.png"   # 支付宝二维码图片路径
       link: ""
       text: "支付宝"
 
@@ -439,3 +439,25 @@ pwa:
   favicon_32_32: /img/pwa/32.png
   favicon_16_16: /img/pwa/16.png
   mask_icon: /img/pwa/safari-pinned-tab.svg
+
+nofollow:
+  enable: true         # 启用插件（默认即为 true）
+  field: site          # 添加范围，可选值：'site'（全站）或 'post'（仅文章）
+  exclude:
+       - 'github.com'
+       - 'gitee.com'
+       - 'hexo.io'
+       - 'cn.bing.com'
+       - 'your-custom-domain.com'
+       - 'www.baidu.com'
+sitemap:
+  path: sitemap.xml
+
+baidusitemap:
+  path: baidusitemap.xml
+
+series:
+  enable: true               # 是否启用系列文章功能
+  orderBy: 'title'           # 排序依据：'title' 或 'date'
+  order: 1                   # 排序顺序：1 为升序，-1 为降序
+  number: true               # 是否显示系列编号
