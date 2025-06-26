@@ -1,1027 +1,286 @@
-# --------------------------------------
-# 导航栏设置
-# --------------------------------------
-nav:
-  logo: https://blogtc.30515245.xyz/20250612142104764.png  # 导航栏 Logo 图片地址
-  display_title: true  # 是否显示标题
-  fixed: false  # 导航栏是否固定
+# ======================================
+# 基础设置
+# ======================================
+favicon: /img/favicon.png       # 浏览器标签页小图标路径
 
-menu:
-  首页: / || fas fa-home  # 首页导航链接及图标
-  标签: /tags/ || fas fa-tags  # 标签导航链接及图标
-  页面||fas fa-book:  # 页面子菜单
-    归档: /archives/ || fas fa-archive  # 归档导航链接及图标
-    分类: /categories/ || fas fa-folder-open  # 分类子菜单链接及图标
-    图库: /album/ || fas fa-images  # 图库子菜单链接及图标
-    说说: /shuoshuo/ || fas fa-comment  # 说说子菜单链接及图标
-    友链: /link/ || fas fa-link  # 友链子菜单链接及图标
-  留言板: /message/ || fas fa-comments  # 留言板导航链接及图标
-# --------------------------------------
-# 代码块设置
-# --------------------------------------
-code_blocks:
-  # 代码块主题: darker / pale night / light / ocean / false
-  theme: light  # 代码块主题，当前为浅色主题
-  macStyle: false  # 是否启用 Mac 风格代码块
-  # 代码块高度限制 (单位: px)
-  height_limit: false  # 代码块是否设置高度限制
-  word_wrap: false  # 代码块内文本是否自动换行
-
-  # 工具栏
-  copy: true  # 是否启用代码复制功能
-  language: true  # 是否显示代码语言
-  # true: 收缩代码块 | false: 展开代码块 | none: 展开代码块并隐藏按钮
-  shrink: false  # 代码块展开状态设置
-  fullpage: false  # 是否启用全屏代码块功能
-
-# 社交媒体链接
-# 格式:
-#   图标: 链接 || 描述 || 颜色
-social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
-# --------------------------------------
-# 图片设置
-# --------------------------------------
-favicon: /img/favicon.png  # 网站图标地址
-avatar:
+avatar:                         # 个人头像设置
   img: https://blogtc.30515245.xyz/20250612142104764.png  # 头像图片地址
-  effect: false  # 是否启用头像特效
-disable_top_img: false  # 是否禁用所有横幅图片
-default_top_img: true  # 页面无横幅图片时是否显示默认横幅图片
-index_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 首页横幅图片样式
-archive_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 归档页面横幅图片样式
-tag_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 标签页面横幅图片样式
-tag_per_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 每个标签页面的横幅图片样式
-category_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 分类页面横幅图片样式
-category_per_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 每个分类页面的横幅图片样式
-footer_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 页脚背景图片样式
-background:  # 网站背景设置，可填颜色或图片链接
-cover:
-  # 是否禁用封面
-  index_enable: true  # 首页是否启用封面
-  aside_enable: true  # 侧边栏是否启用封面
-  archives_enable: true  # 归档页面是否启用封面
-  default_cover: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 封面未设置时的默认封面样式
-error_img:
-  flink: https://blogtc.30515245.xyz/20250613104116053.png  # 友链图片损坏时的替换图片地址
-  post_page: https://blogtc.30515245.xyz/20250613104116053.png  # 文章页面图片损坏时的替换图片地址
-error_404:
-  enable: true  # 是否启用简单 404 页面
-  subtitle: '页面没找到'  # 404 页面副标题
-  background: https://blogtc.30515245.xyz/20250613104116053.png  # 404 页面背景图片地址
-# --------------------------------------
-# 文章元数据设置
-# --------------------------------------
+  effect: false                 # 是否启用头像 Hover 特效
+
+nav:                            # 顶部导航栏设置
+  logo: https://blogtc.30515245.xyz/20250612142104764.png  # 导航栏 Logo
+  display_title: true           # 是否显示站点名称文字
+  fixed: false                  # 导航栏是否固定在顶部
+
+menu:                           # 顶部菜单栏配置： 名称: 路径 || 图标
+  首页: / || fas fa-home
+  标签: /tags/ || fas fa-tags
+  页面||fas fa-book:
+    归档: /archives/ || fas fa-archive
+    分类: /categories/ || fas fa-folder-open
+    图库: /album/ || fas fa-images
+    讨论: /shuoshuo/ || fas fa-comment
+    友链: /link/ || fas fa-link
+  留言板: /message/ || fas fa-comments
+
+# ======================================
+# 首页设置
+# ======================================
+index_layout: 3                 # 首页文章卡片布局样式编号
+index_post_content:
+  method: 2                     # 摘要获取方式：1=分隔符，2=截取字数
+  length: 50                    # 当 method=2 时，摘要最大字数
+
+subtitle:                       # 首页副标题（打字机特效）
+  enable: true                  # 是否启用副标题
+  effect: true                  # 是否启用打字特效
+  loop: true                    # 是否循环播放
+  source: 1                     # 动态来源：1/2/3 对应 typed_option.source
+  sub:                          # 固定副标题文本列表（当不使用动态接口时）
+    - "绿色能源一站式服务伙伴"
+    - "为可持续发展提供清洁动力"
+  typed_option:
+    strings:
+      - "绿色能源一站式服务伙伴"
+      - "为可持续发展提供清洁动力"
+    typeSpeed: 40               # 打字速度（ms）
+    backSpeed: 20               # 删除速度（ms）
+    showCursor: true            # 是否显示光标
+    cursorChar: "|"             # 光标字符
+    async: true
+    source:                     # 动态文本接口
+      1: "https://hitokoto.cn/?encode=json"
+      2: "https://www.jinrishici.com/all?type=json"
+      3: "https://v1.hitokoto.cn/?encode=json"
+
+# ======================================
+# 页面头图与封面设置
+# ======================================
+disable_top_img: false          # 是否禁用所有页面顶部大图
+default_top_img: true           # 是否启用默认顶部大图
+
+# 各页面横幅背景，支持渐变或图片 URL
+index_img:      'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+archive_img:    'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+tag_img:        'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+tag_per_img:    'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+category_img:   'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+category_per_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+footer_img:     'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+
+cover:                          # 封面显示开关
+  index_enable: true            # 首页封面
+  aside_enable: true            # 侧边栏封面
+  archives_enable: true         # 归档页封面
+  default_cover: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+
+# ======================================
+# 评论系统配置
+# ======================================
+comments:
+  use: gitalk,valine           # 启用评论系统列表
+  text: true                   # 显示“评论”文字提示
+  lazyload: false              # 按需加载
+  count: false                 # 在文章列表显示评论数
+  card_post_count: false       # 在卡片中显示评论数
+
+# ---- Gitalk ----
+gitalk:
+  client_id: Ov23liJutLKAugcK0j4R
+  client_secret: a6963493b9f811bc087ac444559a8db94c2a1453
+  repo: pinglen                # 评论数据存储 GitHub 仓库
+  owner: 30515245              # 仓库所有者
+  admin: 30515245              # 评论管理者
+  redirect_uri: https://blog.30515245.xyz  # OAuth 回调
+
+# ---- Valine ----
+valine:
+  appId: QvInG0iJAXI8Vr3CdLsUwRo5-gzGzoHsz
+  appKey: xriETHbw2vAcKhnyCeqYmR9Y
+  avatar: monsterid            # 默认访客头像
+  visitor: false               # 是否显示访客数
+
+# ======================================
+# 外观模式
+# ======================================
+darkmode:
+  enable: true                 # 夜间模式开关
+  button: true                 # 显示切换按钮
+  autoChangeMode: false        # 是否根据系统时间自动切换
+
+readmode: true                 # 阅读模式开关
+
+# ======================================
+# 文章元数据展示
+# ======================================
 post_meta:
   page:
-    date_type: created  # 主页文章元数据日期类型选择为创建日期
-    date_format: date  # 主页文章元数据日期格式选择为常规日期格式
-    categories: true  # 主页显示文章分类
-    tags: false  # 主页不显示文章标签
-    label: true  # 主页显示文章元数据标签
+    date_type: created         # “页面”类型显示创建时间
+    date_format: date          # 显示格式：年月日
+    categories: true           # 显示分类
+    tags: false                # 隐藏标签
+    label: true                # 显示标签样式
   post:
-    position: left  # 文章页面文章元数据位置选择为左侧
-    date_type: both  # 文章页面文章元数据日期类型选择为创建日期和更新日期
-    date_format: date  # 文章页面文章元数据日期格式选择为常规日期格式
-    categories: true  # 文章页面显示文章分类
-    tags: true  # 文章页面显示文章标签
-    label: true  # 文章页面显示文章元数据标签
-# --------------------------------------
-# 首页设置
-# --------------------------------------
-# 主页的顶部图片设置
-# 默认: 顶部图片 - 全屏显示，站点信息 - 居中显示
-# 站点信息的位置，例如: 300px/300em/300rem/10%
-index_site_info_top:  # 主页站点信息距离顶部的位置
-# 顶部图片的高度，例如: 300px/300em/300rem
-index_top_img_height:  # 主页顶部图片的高度
-# 主页副标题
-subtitle:
-  enable: true  # 启用主页副标题
-  effect: true  # 开启打字机效果
-  typed_option: 
-    strings:  # 副标题内容（支持多行轮播）
-      - "绿色能源一站式服务伙伴"
-      - "推动可持续发展的创新力量"
-    typeSpeed: 40  # 打字速度（数值越大越快）
-    backSpeed: 20  # 回删速度
-    loop: true  # 是否循环播放
-    showCursor: true  # 显示光标
-    cursorChar: "|"  # 光标字符
-  source: false  # 禁用第三方服务
-  sub: 
-    - "绿色能源一站式服务伙伴"
-    - "为可持续发展提供清洁动力"  # 主页副标题的具体内容配置项
-# 主页文章布局
-# 1: 封面在左，信息在右
-# 2: 封面在右，信息在左
-# 3: 封面和信息左右交替
-# 4: 封面在上，信息在下
-# 5: 信息显示在封面上
-# 6: 瀑布流布局 - 封面在上，信息在下
-# 7: 瀑布流布局 - 信息显示在封面上
-index_layout: 3  # 主页文章布局设置
+    position: left             # 元信息显示在左侧
+    date_type: both            # 同时显示创建和更新时间
+    date_format: date
+    categories: true
+    tags: true
+    label: true
 
-# 在主页显示文章简介
-# 1: 描述
-# 2: 两者都显示 (如果描述存在，则显示描述，否则显示自动摘要)
-# 3: 自动摘要 (默认)
-# false: 不显示文章简介
-index_post_content:
-  method: 2  # 主页文章简介显示方式
-  # 如果你将 method 设置为 2 或 3，则需要配置长度
-  length: 50  # 主页文章简介显示长度
+# ======================================
+# 代码块显示
+# ======================================
+code_blocks:
+  theme: light                 # 代码主题：light / dark
+  macStyle: false              # 是否启用 Mac 风格窗口按钮
+  height_limit: false          # 是否限定高度
+  word_wrap: false             # 是否自动换行
+  copy: true                   # 显示复制按钮
+  language: true               # 显示语言标签
+  shrink: false                # 收起按钮
+  fullpage: false              # 全页预览
 
-# --------------------------------------
-# 文章设置
-# --------------------------------------
-toc:
-  post: true  # 是否在文章中显示目录
-  page: true  # 是否在页面中显示目录
-  number: false  # 是否为目录添加编号
-  expand: false  # 是否展开目录
-  style_simple: false  # 文章目录是否使用简单样式
-  scroll_percent: true  # 是否在返回顶部按钮中显示滚动百分比
-post_copyright:
-  enable: true  # 是否启用文章版权声明
-  decode: false  # 是否对版权声明内容进行解码
-  author_href: https://blogtc.30515245.xyz/ # 作者链接
-
-  license: CC BY-NC-SA 4.0  # 文章使用的许可协议
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/  # 许可协议的链接
-
-# 赞助/打赏
-reward:
-  enable: false  # 是否启用赞助/打赏功能
-  text:  # 赞助/打赏提示文本
-  QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
-
-# 文章编辑
-# 方便在线浏览和编辑博客源代码。
-post_edit:
-  enable: false  # 是否启用文章编辑功能
-  # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
-  # 例如: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:  # 文章编辑链接
-
-# 相关文章
-related_post:
-  enable: true  # 是否启用相关文章功能
-  # 显示的文章数量
-  limit: 9  # 相关文章显示数量
-  # 选择: created / updated
-  date_type: created  # 相关文章按创建日期排序
-
-# 选择: 1 / 2 / false
-# 1: “下一篇文章” 将链接到旧文章
-# 2: “下一篇文章” 将链接到新文章
-# false: 禁用分页
-post_pagination: 1  # 文章分页设置
-
-# 显示文章过期通知
-noticeOutdate:
-  enable: false  # 是否启用文章过期通知功能
-  # 样式: simple / flat
-  style: flat  # 文章过期通知样式
-  # 何时显示
-  limit_day: 365  # 文章过期天数限制
-  # 位置: top / bottom
-  position: top  # 文章过期通知显示位置
-  message_prev: 自上次更新已过去  # 文章过期通知前缀信息
-  message_next: 天，文章内容可能已过时。  # 文章过期通知后缀信息
-
-# --------------------------------------
-# 页脚设置
-# --------------------------------------
-footer:
-  nav:  # 页脚导航，此处未配置具体内容
-  owner:
-    enable: true  # 启用页脚所有者信息显示
-    since: 2025  # 显示网站起始年份为 2025 年
-  # 主题和框架的版权信息
-  copyright:
-    enable: false  # 启用主题和框架版权信息显示
-    version: false  # 显示版权信息中的版本号
-  custom_text: 欢迎来到零碳时代  # 页脚自定义文本内容
-
-# --------------------------------------
-# 侧边栏设置
-# --------------------------------------
+# ======================================
+# 侧边栏组件
+# ======================================
 aside:
-  enable: true  # 启用侧边栏
-  hide: false  # 不隐藏侧边栏
-  button: true  # 在右下角按钮中显示隐藏侧边栏的按钮
-  mobile: true  # 在移动端显示侧边栏
-  position: right  # 侧边栏位置为右侧，可选值：left / right
+  enable: true                 # 启用侧边栏
+  position: right              # 位置：left / right
   display:
-    archive: true  # 在侧边栏显示归档
-    tag: true  # 在侧边栏显示标签
-    category: true  # 在侧边栏显示分类
-  card_author: 
-    enable: true # 启用作者卡片
-    description: 用绿色改变世界  # 作者卡片描述，可留空填写描述内容
- 
+    archive: true              # 显示归档
+    tag: true                  # 显示标签
+    category: true             # 显示分类
+
+  card_author:                 # 作者信息卡片
+    enable: true
+    description: 用绿色改变世界
     button:
-      enable: true  # 启用作者卡片中的按钮
-      icon: iconfont icon-weixin  # 按钮图标为 GitHub 图标
-      text: 关注我  # 按钮文本为“关注我”
-      link: https://blogtc.30515245.xyz/20250621151601127.webp  # 按钮链接到指定的 GitHub 页面
-  card_announcement:
-    enable: true  # 启用公告卡片
-    content: 欢迎来到零碳时代  # 公告卡片内容为“这是我的博客”
-  card_recent_post:
-    enable: true  # 启用最近文章卡片
-    limit: 5  # 显示最近文章的数量，设置为 0 将显示全部
-    sort: date  # 按日期排序，可选值：date / updated
-    sort_order:  # 排序顺序，可留空按默认规则排序
-  card_newest_comments:
-    enable: false  # 禁用最新评论卡片
-    sort_order:  # 排序顺序，可留空按默认规则排序
-    limit: 6  # 显示最新评论的数量
-    storage: 10  # 将数据保存到 localStorage 的时间，单位：分钟
-    avatar: true  # 显示评论者头像
-  card_categories:
-    enable: true  # 启用分类卡片
-    limit: 8  # 显示分类的数量，设置为 0 将显示全部
-    expand: none  # 分类展开状态，可选值：none / true / false
-    sort_order:  # 排序顺序，可留空按默认规则排序
-  card_tags:
-    enable: true  # 启用标签卡片
-    limit: 40  # 显示标签的数量，设置为 0 将显示全部
-    color: false  # 标签是否显示颜色
-    orderby: random  # 标签排序方式，可选值：random/name/length
-    order: 1  # 排序顺序，1 为升序; -1 为降序
-    sort_order:  # 排序顺序，可留空按默认规则排序
-  card_archives:
-    enable: false  # 启用归档卡片
-    type: monthly  # 归档类型，可选值：monthly / yearly
-    format: MMMM YYYY  # 归档日期格式，例如: YYYY年MM月
-    order: -1  # 排序顺序，1 为升序; -1 为降序
-    limit: 8  # 显示归档的数量，设置为 0 将显示全部
-    sort_order:  # 排序顺序，可留空按默认规则排序
-  card_post_series:
-    enable: true  # 启用文章系列卡片
-    series_title: false  # 标题是否显示系列名称
-    orderBy: 'date'  # 按标题或日期排序，此处选择按日期排序
-    order: -1  # 排序顺序，1 为升序; -1 为降序
-  card_webinfo:
-    enable: true  # 启用网站信息卡片
-    post_count: true  # 显示文章总数
-    last_push_date: true  # 显示最后推送日期
-    sort_order:  # 排序顺序，可留空按默认规则排序
-    runtime_date:  # 发布日期与当前日期的时间差，格式: Month/Day/Year Time 或 Year/Month/Day Time，若不启用此功能，请留空
-# --------------------------------------
-# 右下角按钮设置
-# --------------------------------------
-# 右下角按钮与底部的距离 (默认单位: px)
-rightside_bottom:  # 右下角按钮与底部的距离
-# 繁简中文转换
-translate:
-  enable: false  # 是否启用繁简中文转换功能
-  # 按钮文本
-  default: 繁  # 繁简中文转换按钮默认文本
-  # 网站语言 (1 - 繁体中文/ 2 - 简体中文）
-  defaultEncoding: 2  # 网站默认语言设置
-  # 时间延迟
-  translateDelay: 0  # 繁简中文转换时间延迟
-  # 当语言为简体中文时按钮的文本
-  msgToTraditionalChinese: '繁'  # 简体转繁体时按钮文本
-  # 当语言为繁体中文时按钮的文本
-  msgToSimplifiedChinese: '簡'  # 繁体转简体时按钮文本
+      enable: true
+      icon: iconfont icon-weixin
+      text: 关注我
+      link: https://blogtc.30515245.xyz/20250621151601127.webp
 
-# 阅读模式
-readmode: true  # 是否启用阅读模式
+  card_announcement:           # 公告卡片
+    enable: true
+    content: 欢迎来到零碳时代
 
-# 夜间模式
-darkmode:
-  enable: true  # 是否启用夜间模式
-  # 切换夜间/日间模式的按钮
-  button: true  # 是否显示夜间/日间模式切换按钮
-  # 自动切换夜间/日间模式
-  # autoChangeMode: 1 跟随系统设置，如果系统不支持夜间模式，将在下午 6 点到早上 6 点之间切换夜间模式
-  # autoChangeMode: 2 在下午 6 点到早上 6 点之间切换夜间模式
-  # autoChangeMode: false
-  autoChangeMode: false  # 夜间/日间模式自动切换设置
-  # 设置日间模式时间。值在 0 到 24 之间。如果未设置，默认值为 6 和 18
-  start:  # 日间模式开始时间
-  end:  # 日间模式结束时间
+  card_recent_post:            # 最近文章卡片
+    enable: true
+    limit: 5
+    sort: date
 
-# 在返回顶部按钮中显示滚动百分比
-rightside_scroll_percent: true  # 是否在返回顶部按钮中显示滚动百分比
+  card_tags:                   # 标签云卡片
+    enable: true
+    limit: 40
+    color: false
+    orderby: random
+    order: 1
 
-# 除非你知道它们的工作原理，否则不要修改以下设置
-# 选择: readmode,translate,darkmode,hideAside,toc,chat,comment
-# 不要重复相同的值
-rightside_item_order:
-  enable: false  # 是否启用右下角按钮排序功能
-  # 默认: readmode,translate,darkmode,hideAside
-  hide:  # 右下角按钮隐藏项
-  # 默认: toc,chat,comment
-  show:  # 右下角按钮显示项
+  card_webinfo:                # 站点信息卡片
+    enable: true
+    post_count: true           # 文章总数
+    last_push_date: true       # 最近更新时间
 
-# 右下角配置按钮的动画效果
-rightside_config_animation: true  # 右下角配置按钮是否启用动画效果
+# ======================================
+# 404 页面
+# ======================================
+error_404:
+  enable: true
+  subtitle: 页面没找到
+  background: https://blogtc.30515245.xyz/20250613104116053.png
 
-# --------------------------------------
-# 全局设置
-# --------------------------------------
-anchor:
-  # 滚动时，URL 将根据标题 ID 更新。
-  auto_update: false  # 滚动时 URL 是否根据标题 ID 更新
-  # 点击标题进行滚动并更新锚点
-  click_to_scroll: false  # 点击标题是否滚动并更新锚点
+# ======================================
+# 文章版权声明
+# ======================================
+post_copyright:
+  enable: true
+  author_href: https://blogtc.30515245.xyz/
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-photofigcaption: false  # 是否启用图片标题功能
-
-copy:
-  enable: true  # 是否启用复制功能
-  # 在复制内容后添加版权信息
-  copyright:
-    enable: true  # 是否在复制内容后添加版权信息
-    limit_count: 150  # 复制内容达到多少字符时添加版权信息
-
-# 需要安装 hexo-wordcount 插件
+# ======================================
+# 字数统计与阅读时长
+# ======================================
 wordcount:
-  enable: true  # 是否启用文章字数统计功能
-  # 在文章元数据中显示文章字数
-  post_wordcount: true  # 是否在文章元数据中显示文章字数
-  # 在文章元数据中显示阅读文章所需时间
-  min2read: true  # 是否在文章元数据中显示阅读文章所需时间
-  # 在侧边栏的网站信息中显示网站总字数
-  total_wordcount: true  # 是否在侧边栏网站信息中显示网站总字数
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
 
-# 网站的不蒜子 PV / UV 统计
-busuanzi:
-  site_uv: true  # 是否启用网站 UV 统计
-  site_pv: true  # 是否启用网站 PV 统计
-  page_pv: true  # 是否启用页面 PV 统计
+# ======================================
+# 图片灯箱效果
+# ======================================
+lightbox: medium_zoom          # 可选 fancybox / medium_zoom
 
-# --------------------------------------
-# 数学公式设置
-# --------------------------------------
-# 关于 per_page
-# 如果你将其设置为 true，将在每个页面加载 mathjax/katex 脚本
-# 如果你将其设置为 false，将根据你的设置加载 mathjax/katex 脚本 (在页面的 front-matter 中添加 'mathjax: true' 或 'katex: true')
+# ======================================
+# 数学公式渲染
+# ======================================
 math:
-  # 选择: mathjax, katex
-  # 如果你不需要数学公式，请留空
-  use:  # 选择使用的数学公式渲染引擎
-  per_page: true  # 是否在每个页面加载数学公式渲染脚本
-  hide_scrollbar: false  # 是否隐藏数学公式滚动条
+  use: katex                         # 填写 mathjax 或 katex 启用
+  per_page: true
+  hide_scrollbar: false
 
   mathjax:
-    # 启用上下文菜单
-    enableMenu: true  # 是否启用 MathJax 上下文菜单
-    # 选择: all / ams / none，这控制方程是否编号以及如何编号
-    tags: none  # MathJax 方程编号设置
+    enableMenu: true
+    tags: none
 
   katex:
-    # 启用复制 KaTeX 公式功能
-    copy_tex: false  # 是否启用 KaTeX 公式复制功能
+    copy_tex: false
 
-# --------------------------------------
-# 搜索设置
-# --------------------------------------
-search:
-  # 选择: algolia_search / local_search / docsearch
-  # 如果你不需要搜索功能，请留空
-  use: local_search  # 搜索服务类型，可选择 algolia_search、local_search 或 docsearch，无需搜索功能则留空
-  placeholder:  # 搜索框占位提示文本
+# ======================================
+# 图片加载错误替换
+# ======================================
+error_img:
+  flink: https://blogtc.30515245.xyz/20250613104116053.png  # 友链图替换
+  post_page: https://blogtc.30515245.xyz/20250613104116053.png  # 文章页替换
 
-  # Algolia 搜索
-  algolia_search:
-    # 每页显示的搜索结果数量
-    hitsPerPage: 6  # Algolia 搜索每页显示的结果数量为 6
-
-  # 本地搜索
-  local_search:
-    # 页面加载时预加载搜索数据。
-    preload: false  # 页面加载时不预加载本地搜索数据
-    # 每篇文章显示前 n 个结果，设置为 -1 显示全部结果
-    top_n_per_article: 1  # 每篇文章显示前 1 个本地搜索结果
-    # 将 html 字符串转换为可读形式。
-    unescape: false  # 不将 html 字符串转换为可读形式
-    CDN:  # 本地搜索的 CDN 地址
-
-  # Docsearch
-  # https://docsearch.algolia.com/
-  docsearch:
-    appId:  # Docsearch 的应用 ID
-    apiKey:  # Docsearch 的 API 密钥
-    indexName:  # Docsearch 的索引名称
-    option:  # Docsearch 的其他配置选项
-
-# --------------------------------------
-# 分享系统设置
-# --------------------------------------
-share:
-  # 选择: sharejs / addtoany
-  # 如果你不需要分享功能，请留空
-  use: sharejs  # 选择使用 Share.js 作为分享系统
-
-  # Share.js
-  # https://github.com/overtrue/share.js
-  sharejs:
-    sites: facebook,twitter,wechat,weibo,qq  # Share.js 支持的分享站点
-
-  # AddToAny
-  # https://www.addtoany.com/
-  addtoany:
-    item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link  # AddToAny 支持的分享项
-
-# --------------------------------------
-# 评论系统设置
-# --------------------------------------
-comments:
-  # 最多支持两个评论系统，第一个将作为默认显示
-  # 如果你不需要评论功能，请留空
-  # 选择: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  # 两个评论系统的格式 : Disqus,Waline
-  use: gitalk,valine  # 选择要使用的评论系统，可留空禁用评论功能
-  # 在按钮旁边显示评论系统名称
-  text: true  # 设为 true 则在按钮旁显示评论系统名称
-  # 懒加载: 当评论元素进入浏览器视口时加载评论系统。
-  # 如果你将其设置为 true，评论计数将无效
-  lazyload: false  # 设为 true 启用懒加载，此时评论计数无效
-  # 在文章顶部图片中显示评论计数
-  count: false  # 设为 true 则在文章顶部图片显示评论计数
-  # 在主页显示评论计数
-  card_post_count: false  # 设为 true 则在主页显示评论计数
-
-# Disqus
-# https://disqus.com/
-disqus:
-  shortname:  # Disqus 短名称
-  # 用于最新评论小部件
-  apikey:  # Disqus 用于最新评论小部件的 API 密钥
-
-# 替代 Disqus - 使用 Disqus API 渲染评论
-# https://github.com/SukkaW/DisqusJS
-disqusjs:
-  shortname:  # DisqusJS 的短名称
-  apikey:  # DisqusJS 的 API 密钥
-  option:  # DisqusJS 的其他配置选项
-
-# Livere
-# https://www.livere.com/
-livere:
-  uid:  # Livere 的用户 ID
-
-# Gitalk
-# https://github.com/gitalk/gitalk
-gitalk:
-  client_id: Ov23liJutLKAugcK0j4R  # Gitalk 的客户端 ID
-  client_secret: a6963493b9f811bc087ac444559a8db94c2a1453  # Gitalk 的客户端密钥
-  repo: pinglen  # Gitalk 关联的仓库名称
-  owner: 30515245  # Gitalk 仓库的所有者
-  admin: 30515245  # Gitalk 管理员列表
-  redirect_uri: https://blog.30515245.xyz  # Gitalk 重定向链接
-  option:  # Gitalk 的其他配置选项
-
-# Valine
-# https://valine.js.org
-valine:
-  appId: QvInG0iJAXI8Vr3CdLsUwRo5-gzGzoHsz  # Valine 的应用 ID
-  appKey: xriETHbw2vAcKhnyCeqYmR9Y  # Valine 的应用密钥
-  avatar: monsterid  # Valine 的头像设置
-  # 此配置适用于国内自定义域名用户，海外版本将自动检测 (无需手动填写)
-  serverURLs:  # Valine 国内自定义域名用户的服务器 URL
-  bg:  # Valine 的背景设置
-  # 使用 Valine 访客计数作为页面浏览量计数
-  visitor: false  # 设为 true 则使用 Valine 访客计数作为页面浏览量计数
-  option:  # Valine 的其他配置选项
-  
-# Waline - 一个简单的带有后端支持的评论系统，派生自 Valine
-
-# Utterances
-# https://utteranc.es/
-utterances:
-  repo:  # Utterances 关联的仓库名称
-  # 问题映射: pathname/url/title/og:title
-  issue_term: pathname  # Utterances 的问题映射方式
-  # 主题: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
-  light_theme: github-light  # Utterances 浅色主题
-  dark_theme: photon-dark  # Utterances 深色主题
-  js:  # Utterances 的 JS 文件路径
-  option:  # Utterances 的其他配置选项
-
-# Facebook 评论插件
-# https://developers.facebook.com/docs/plugins/comments/
-facebook_comments:
-  app_id:  # Facebook 评论插件的应用 ID
-  # 可选
-  user_id:  # Facebook 评论插件的用户 ID（可选）
-  pageSize: 10  # Facebook 评论插件每页显示的评论数量
-  # 选择: social / time / reverse_time
-  order_by: social  # Facebook 评论插件的排序方式
-  lang: en_US  # Facebook 评论插件的语言设置
-
-# Twikoo
-# https://github.com/imaegoo/twikoo
-twikoo:
-  envId:  # Twikoo 的环境 ID
-  region:  # Twikoo 的区域设置
-  # 使用 Twikoo 访客计数作为页面浏览量计数
-  visitor: false  # 设为 true 则使用 Twikoo 访客计数作为页面浏览量计数
-  option:  # Twikoo 的其他配置选项
-
-# Giscus
-# https://giscus.app/
-giscus:
-  repo:  # Giscus 关联的仓库名称
-  repo_id:  # Giscus 仓库的 ID
-  category_id:  # Giscus 分类的 ID
-  light_theme: light  # Giscus 浅色主题
-  dark_theme: dark  # Giscus 深色主题
-  js:  # Giscus 的 JS 文件路径
-  option:  # Giscus 的其他配置选项
-
-# Remark42
-# https://remark42.com/docs/configuration/frontend/
-remark42:
-  host:  # Remark42 的主机地址
-  siteId:  # Remark42 的站点 ID
-  option:  # Remark42 的其他配置选项
-
-# Artalk
-# https://artalk.js.org/guide/frontend/config.html
-artalk:
-  server:  # Artalk 的服务器地址
-  site:  # Artalk 的站点名称
-  # 使用 Artalk 访客计数作为页面浏览量计数
-  visitor: false  # 设为 true 则使用 Artalk 访客计数作为页面浏览量计数
-  option:  # Artalk 的其他配置选项
-
-# --------------------------------------
-# 聊天服务设置
-# --------------------------------------
-chat:
-  # 选择: chatra/tidio/crisp
-  # 如果你不需要聊天功能，请留空
-  use:  # 选择使用的聊天服务
-  # 聊天按钮 [推荐]
-  # 它将在网站右下角创建一个按钮，并隐藏原始按钮
-  rightside_button: false  # 是否在右下角显示聊天按钮
-  # 滚动向上时显示原始聊天按钮，滚动向下时隐藏按钮
-  button_hide_show: false  # 聊天按钮滚动显示设置
-
-# https://chatra.io/
-chatra:
-  id:  # Chatra 聊天服务 ID
-
-# https://www.tidio.com/
-tidio:
-  public_key:  # Tidio 聊天服务公钥
-
-# https://crisp.chat/en/
-crisp:
-  website_id:  # Crisp 聊天服务网站 ID
-
-# --------------------------------------
-# 分析设置
-# --------------------------------------
-# https://tongji.baidu.com/web/welcome/login
-baidu_analytics:  # 百度统计代码
-
-# https://analytics.google.com/analytics/web/
-google_analytics:  # Google 统计代码
-
-# https://www.cloudflare.com/zh-tw/web-analytics/
-cloudflare_analytics: be171c5e82a24b278c2200b69bd7c3ae  # Cloudflare 统计代码
-
-microsoft_clarity:  # Microsoft Clarity 统计代码
-
-# https://umami.is/
-umami_analytics:
-  enable: false  # 是否启用 Umami 统计
-  # 对于自建部署，配置 Umami 实例的主机名
-  serverURL:  # Umami 实例主机名
-  website_id:  # Umami 网站 ID
-  option:  # Umami 其他配置选项
-  UV_PV:
-    site_uv: false  # 是否统计网站 UV
-    site_pv: false  # 是否统计网站 PV
-    page_pv: false  # 是否统计页面 PV
-    # Umami Cloud (API 密钥) / 自建 Umami (令牌)
-    token:  # Umami 统计令牌
-
-# https://www.googletagmanager.com/
-google_tag_manager:
-  tag_id:  # Google 标签管理器 ID
-  # 可选
-  domain:  # Google 标签管理器域名
-
-# --------------------------------------
-# 广告设置
-# --------------------------------------
-# Google Adsense
-google_adsense:
-  enable: false  # 是否启用 Google Adsense 广告
-  auto_ads: true  # 是否启用自动广告
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js  # Google Adsense 广告脚本地址
-  client:  # Google Adsense 客户端 ID
-  enable_page_level_ads: true  # 是否启用页面级广告
-
-# 手动插入广告
-# 如果你不需要广告，请留空
-ad:
-  # 在首页插入广告 (每三篇文章插入一次)
-  index:  # 首页广告代码
-  # 在侧边栏插入广告
-  aside:  # 侧边栏广告代码
-  # 在文章中插入广告 (分页前)
-  post:  # 文章广告代码
-
-# --------------------------------------
-# 验证设置
-# --------------------------------------
-site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
-
-# --------------------------------------
-# 美化/效果设置
-# --------------------------------------
-# 自定义主题颜色
-# 注意: 颜色值必须用双引号括起来，如 "#000"，否则可能会出错！
-
-# theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
-#   button_hover: "#FF7242"
-#   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
-#   scrollbar_color: "#49b1f5"
-#   meta_theme_color_light: "ffffff"
-#   meta_theme_color_dark: "#0d0d0d"
-
-# 分类和标签页面的用户界面设置
-# 选择: index - 与首页 UI 相同 / default - 与归档页面 UI 相同
-# 留空或设置为 index
-category_ui:  # 分类页面 UI 设置
-tag_ui:  # 标签页面 UI 设置
-
-# UI 元素圆角设置
-rounded_corners_ui: true  # 是否启用 UI 元素圆角设置
-
-# 拉伸文本行，使每行宽度相等
-text_align_justify: false  # 是否启用文本两端对齐
-
-# 为页眉和页脚添加遮罩
-mask:
-  header: true  # 页眉是否添加遮罩
-  footer: true  # 页脚是否添加遮罩
-
-# 加载动画
-preloader:
-  enable: true  # 是否启用加载动画
-  # 来源
-  # 1. 全屏加载动画
-  # 2. pace (进度条)
-  source: 2  # 加载动画来源
-  # pace 主题 (请参阅 https://codebyzach.github.io/pace/)
-  pace_css_url: https://codebyzach.github.io/pace/  # Pace 进度条主题 CSS 地址
-
-# 页面过渡效果
-enter_transitions: true  # 是否启用页面过渡效果
-
-# 默认显示模式 - light (默认) / dark
-display_mode: light  # 网站默认显示模式
-
-# 美化文章内容的配置
-beautify:
-  enable: false  # 是否启用文章内容美化功能
-  # 指定要美化的字段 (site 或 post)
-  field: post  # 要美化的字段
-  # 指定用作标题前缀的图标，例如 '\f0c1'
-  title_prefix_icon:  # 标题前缀图标
-  # 指定标题前缀图标的颜色，例如 '#F47466'
-  title_prefix_icon_color:  # 标题前缀图标颜色
-
-# 全局字体设置
-# 除非你知道它们的工作原理，否则不要修改以下设置
-font:
-  global_font_size:  # 全局字体大小
-  code_font_size:  # 代码字体大小
-  font_family:  # 全局字体家族
-  code_font_family:  # 代码字体家族
-
-# 网站标题和副标题的字体设置
-blog_title_font:
-  font_link:  # 网站标题和副标题字体链接
-  font_family:  # 网站标题和副标题字体家族
-
-# 分隔线图标的设置
-hr_icon:
-  enable: true  # 是否启用分隔线图标
-  # Font Awesome 图标的 unicode 值，例如 '\3423'
-  icon:  # 分隔线图标 unicode 值
-  icon_top:  # 分隔线图标顶部位置
-
-# 打字机效果
-# https://github.com/disjukr/activate-power-mode
+# ======================================
+# 打字机爆炸动效
+# ======================================
 activate_power_mode:
-  enable: true  # 是否启用打字机效果
-  colorful: true  # 打字机效果是否显示颜色
-  shake: true  # 打字机效果是否显示震动
-  mobile: true  # 打字机效果是否在移动端显示
+  enable: true
+  colorful: true
+  shake: true
+  mobile: true
 
-# 背景效果
-# --------------------------------------
-# canvas_ribbon
-# 请参阅: https://github.com/hustcc/ribbon.js
-canvas_ribbon:
-  enable: false  # 是否启用 canvas 彩带背景效果
-  # 彩带的大小
-  size: 150  # 彩带大小
-  # 彩带的不透明度 (0 ~ 1)
-  alpha: 0.6  # 彩带不透明度
-  zIndex: -1  # 彩带 z-index 值
-  click_to_change: false  # 点击是否改变彩带效果
-  mobile: false  # 彩带效果是否在移动端显示
+# ======================================
+# 社交分享
+# ======================================
+share:
+  use: sharejs
+  sharejs:
+    sites: facebook,twitter,wechat,weibo,qq
 
-# 飘动的彩带
-canvas_fluttering_ribbon:
-  enable: false  # 是否启用飘动的彩带背景效果
-  mobile: false  # 飘动的彩带效果是否在移动端显示
-
-# canvas_nest
-# https://github.com/hustcc/canvas-nest.js
-canvas_nest:
-  enable: false  # 是否启用 canvas 嵌套背景效果
-  # 线条颜色，默认: '0,0,0'; RGB 值: (R,G,B)。(注意: 使用 ',' 分隔。)
-  color: '0,0,255'  # 线条颜色
-  # 线条的不透明度 (0~1)
-  opacity: 0.7  # 线条不透明度
-  # 背景的 z-index 属性
-  zIndex: -1  # 背景 z-index 值
-  # 线条数量
-  count: 99  # 线条数量
-  mobile: false  # canvas 嵌套效果是否在移动端显示
-
-# 鼠标点击效果: 烟花
-fireworks:
-  enable: false  # 是否启用鼠标点击烟花效果
-  zIndex: 9999  # 烟花效果 z-index 值
-  mobile: false  # 鼠标点击烟花效果是否在移动端显示
-
-# 鼠标点击效果: 心形符号
-click_heart:
-  enable: false  # 是否启用鼠标点击心形符号效果
-  mobile: false  # 鼠标点击心形符号效果是否在移动端显示
-
-# 鼠标点击效果: 文字
-clickShowText:
-  enable: false  # 是否启用鼠标点击显示文字效果
-  text:
-    # - I
-    # - LOVE
-    # - YOU
-  fontSize: 15px  # 鼠标点击显示文字字体大小
-  random: false  # 鼠标点击显示文字是否随机
-  mobile: false  # 鼠标点击显示文字效果是否在移动端显示
-
-# --------------------------------------
-# 灯箱设置
-# --------------------------------------
-lightbox: medium_zoom  # 是否启用灯箱效果，选择: fancybox / medium_zoom，不需要灯箱功能请留空
-# 选择: fancybox / medium_zoom
-# https://github.com/francoischalifour/medium-zoom
-# https://fancyapps.com/fancybox/
-# 如果你不需要灯箱功能，请留空
-
-# --------------------------------------
-# 标签插件设置
-# --------------------------------------
-# 系列
-series:
-  enable: false  # 是否启用系列标签插件
-  # 按标题或日期排序
-  orderBy: 'title'  # 系列标签排序方式
-  # 排序顺序。1 为升序; -1 为降序
-  order: 1  # 系列标签排序顺序
-  number: true  # 系列标签是否显示编号
-
-# ABCJS - ABC 音乐符号插件
-# https://github.com/paulrosen/abcjs
-abcjs:
-  enable: false  # 是否启用 ABCJS 音乐符号插件
-  per_page: true  # 是否在每个页面加载 ABCJS 插件
-
-# Mermaid
-# https://github.com/mermaid-js/mermaid
-mermaid:
-  enable: false  # 是否启用 Mermaid 图表插件
-  # 使用代码块编写 Mermaid 图表
-  code_write: false  # 是否使用代码块编写 Mermaid 图表
-  # 内置主题: default / forest / dark / neutral
-  theme:
-    light: default  # Mermaid 图表浅色主题
-    dark: dark  # Mermaid 图表深色主题
-
-# chartjs
-# 请参阅 https://www.chartjs.org/docs/latest/
-chartjs:
-  enable: false  # 是否启用 Chart.js 图表插件
-  # 除非你理解它们的工作原理，否则不要修改。
-  # 默认设置仅在未指定 MD 语法时使用。
-  # 图表的通用字体颜色
-  fontColor:
-    light: 'rgba(0, 0, 0, 0.8)'  # Chart.js 图表浅色主题字体颜色
-    dark: 'rgba(255, 255, 255, 0.8)'  # Chart.js 图表深色主题字体颜色
-  # 图表的通用边框颜色
-  borderColor:
-    light: 'rgba(0, 0, 0, 0.1)'  # Chart.js 图表浅色主题边框颜色
-    dark: 'rgba(255, 255, 255, 0.2)'  # Chart.js 图表深色主题边框颜色
-  # 雷达图和极坐标图中刻度标签的背景颜色
-  scale_ticks_backdropColor:
-    light: 'transparent'  # Chart.js 图表浅色主题刻度标签背景颜色
-    dark: 'transparent'  # Chart.js 图表深色主题刻度标签背景颜色
-
-# 笔记 - Bootstrap 标注
-note:
-  # 笔记标签样式值:
-  #  - simple    bs-callout 旧版警告样式。默认。
-  #  - modern    bs-callout 新版 (v2-v3) 警告样式。
-  #  - flat      带有背景的扁平标注样式，类似于 Mozilla 或 StackOverflow。
-  #  - disabled  禁用笔记标签的所有 CSS 样式导入。
-  style: flat  # 笔记标签样式
-  icons: true  # 笔记标签是否显示图标
-  border_radius: 3  # 笔记标签边框圆角半径
-  # 现代和扁平样式的背景较浅偏移量 (百分比) (modern: -12 | 12; flat: -18 | 6)。
-  # 偏移量也适用于标签变量。此选项在禁用笔记标签时也可使用。
-  light_bg_offset: 0  # 笔记标签背景偏移量
-
-# --------------------------------------
-# 其他设置
-# --------------------------------------
-# https://github.com/MoOx/pjax
-pjax:
-  enable: true  # 是否启用 PJAX 功能
-  # 排除指定页面不使用 pjax，例如 '/music/'
-  exclude:
-    # - /xxxxxx/
-
-# 注入 css 和脚本 (aplayer/meting)
-aplayerInject:
-  enable: true  # 是否启用 APlayer 注入功能
-  per_page: true  # 是否在每个页面注入 APlayer
-
-inject:
-  head:
-  bottom:
-    - <div class="aplayer no-destroy" data-id="13590986654" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div>
-    - <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4958429_xw3a4lhehsg.css">
-
-# Snackbar - 吐司通知
-# https://github.com/polonel/SnackBar
-# 位置: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
-snackbar:
-  enable: false  # 是否启用 Snackbar 吐司通知功能
-  position: bottom-left  # Snackbar 吐司通知显示位置
-  # 吐司通知在日间模式和夜间模式下的背景颜色
-  bg_light: '#49b1f5'  # Snackbar 吐司通知日间模式背景颜色
-  bg_dark: '#1f1f1f'  # Snackbar 吐司通知夜间模式背景颜色
-
-# Instant.page
-# https://instant.page/
-instantpage: false  # 是否启用 Instant.page 功能
-
-# 懒加载
-# https://github.com/verlok/vanilla-lazyload
-lazyload:
-  enable: false  # 是否启用懒加载功能
-  # 指定使用懒加载的字段 (site 或 post)
-  field: site  # 要使用懒加载的字段
-  placeholder:  # 懒加载占位符
-  blur: false  # 懒加载是否显示模糊效果
-
-# PWA
-# 请参阅 https://github.com/JLHwung/hexo-offline
-# ---------------
-pwa:
-  enable: false  # 是否启用 PWA 功能
-  manifest:  # PWA 清单文件地址
-  apple_touch_icon:  # PWA 苹果触摸图标地址
-  favicon_32_32:  # PWA 32x32 图标地址
-  favicon_16_16:  # PWA 16x16 图标地址
-  mask_icon:  # PWA 遮罩图标地址
-
-# Open graph 元标签
-# https://hexo.io/docs/helpers#open-graph
+# ======================================
+# Open Graph & 结构化数据
+# ======================================
 Open_Graph_meta:
-  enable: true  # 是否启用 Open Graph 元标签功能
-  option:
-    # twitter_card:
-    # twitter_image:
-    # twitter_id:
-    # twitter_site:
-    # google_plus:
-    # fb_admins:
-    # fb_app_id:
+  enable: true
+  option: {}
 
-# 结构化数据
-# https://developers.google.com/search/docs/guides/intro-structured-data
-structured_data: true  # 是否启用结构化数据功能
+structured_data: true
 
-# 添加供应商前缀以确保兼容性
-css_prefix: true  # 是否添加 CSS 供应商前缀
+# ======================================
+# 播放器 & 图标字体注入
+# ======================================
+inject:
+  head:                         # 注入到 <head> 的内容
+  bottom:
+    - '<div class="aplayer no-destroy" data-id="13590986654" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"></div>'
+    - '<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4958429_xw3a4lhehsg.css">'
 
-# 注入
-# 在头部 ( '</head>' 标签之前) 和底部 ( '</body>' 标签之前) 插入代码
+aplayerInject:
+  enable: true                  # 启用播放器注入
+  per_page: true                # 支持单页控制
 
-# CDN 设置
-# 除非你知道它们的工作原理，否则不要修改以下设置
-CDN:
-  # ... existing code ...
-  option:
-    # 保留原有的注释内容
-    # abcjs_basic_js:
-    # activate_power_mode:
-    # ... 其他原有注释 ...
-    # 添加以下三行（取消注释并填入 CDN 链接）
-  # 两者的选项: local/jsdelivr/unpkg/cdnjs/custom
-  # 注意: 开发版本的内部脚本只能使用 'local'
-  # 注意: 当将第三方脚本设置为 'local' 时，你需要安装 hexo-butterfly-extjs
-  internal_provider: local  # 内部脚本 CDN 供应商
-  third_party_provider: jsdelivr  # 第三方脚本 CDN 供应商
-
-  # 在 URL 中添加版本号，true 或 false
-  version: false  # 是否在 CDN URL 中添加版本号
-
-  # 自定义格式
-  # 例如: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-custom_format:
-
-    # abcjs_basic_js:
-    # activate_power_mode:
-    # algolia_js:
-    # algolia_search:
-    # aplayer_css:
-    # aplayer_js:
-    # artalk_css:
-    # artalk_js:
-    # blueimp_md5:
-    # busuanzi:
-    # canvas_fluttering_ribbon:
-    # canvas_nest:
-    # canvas_ribbon:
-    # chartjs:
-    # click_heart:
-    # clickShowText:
-    # disqusjs:
-    # disqusjs_css:
-    # docsearch_css:
-    # docsearch_js:
-    # egjs_infinitegrid:
-    # fancybox:
-    # fancybox_css:
-    # fireworks:
-    # fontawesome:
-    # gitalk:
-    # gitalk_css:
-    # giscus:
-    # instantpage:
-    # instantsearch:
-    # katex:
-    # katex_copytex:
-    # lazyload:
-    # local_search:
-    # main:
-    # main_css:
-    # mathjax:
-    # medium_zoom:
-    # mermaid:
-    # meting_js:
-    # prismjs_autoloader:
-    # prismjs_js:
-    # prismjs_lineNumber_js:
-    # pjax:
-    # sharejs:
-    # sharejs_css:
-    # snackbar:
-    # snackbar_css:
-    # translate:
-    # twikoo:
-    # typed:
-    # utils:
-    # valine:
-    # waline_css:
-    # waline_js:
+# ======================================
+# 背景粒子特效（Canvas Nest）
+# ======================================
+canvas_nest:
+  enable: false
+  color: '0,0,255'
+  opacity: 0.7
+  zIndex: -1
+  count: 99
+  mobile: false
