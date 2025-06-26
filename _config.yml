@@ -41,11 +41,11 @@ relative_link: false  # 是否使用相对链接
 future: false  # 是否显示未来日期的文章
 syntax_highlighter: highlight.js  # 代码语法高亮工具，这里设置为 highlight.js
 highlight:
-  line_number: true  # 是否显示代码行号
-  auto_detect: false  # 是否自动检测代码语言
+  line_number: false  # 是否显示代码行号
+  auto_detect: true  # 是否自动检测代码语言
   tab_replace: ''  # 用于替换制表符的内容
   wrap: true  # 是否对代码进行换行处理
-  hljs: false  # 是否使用 highlight.js 的新 API
+  hljs: true  # 是否使用 highlight.js 的新 API
 prismjs:
   preprocess: true  # 是否在高亮前对代码进行预处理
   line_number: true  # 是否显示代码行号

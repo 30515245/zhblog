@@ -81,6 +81,16 @@ cover:                          # 封面显示开关
   archives_enable: true         # 归档页封面
   default_cover: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
 
+  # ─── 侧边栏目录（TOC）配置 ───────────────────────────────
+toc:
+  post: true           # 在文章页显示目录
+  page: false          # 在普通页面隐藏目录
+  number: false         # 显示每一项的编号
+  expand: false        # 默认折叠子节点
+  style_simple: false  # 关闭“简洁模式”样式
+  scroll_percent: true # 在目录顶部显示阅读进度百分比
+
+
 # ======================================
 # 评论系统配置
 # ======================================
@@ -306,6 +316,54 @@ search:
   # 本地搜索配置（推荐使用 hexo-generator-searchdb 插件）
   local_search:
     preload: true            # 是否在页面加载时预加载搜索索引文件（建议开启）
-    top_n_per_article: -1    # 每篇文章最多展示的匹配条数，设为 -1 显示全部匹配
+    top_n_per_article: 6   # 每篇文章最多展示的匹配条数，设为 -1 显示全部匹配
     unescape: true           # 是否对 HTML 转义字符进行解码（可增强可读性）
 
+# ────────────────────────────────────────────
+# Mermaid 配置 —— Hexo 全局 _config.yml
+# ────────────────────────────────────────────
+mermaid:
+  # 是否启用 Mermaid 渲染。设为 true，才会处理 {% mermaid %}…{% endmermaid %} 块。
+  enable: true
+
+  # 是否把 Markdown 代码块（```mermaid … ```）也当成图表渲染。设为 true 时可两种书写都生效。
+  code_write: true
+
+  # 内置主题：default / forest / dark / neutral
+  # 这里示例在浅色暗色模式下分别切换
+  theme:
+    light: default
+    dark: dark
+
+  # 注入给 mermaid.initialize() 的全局参数
+  config:
+    # 自动在 DOMContentLoaded 时渲染
+    startOnLoad: true
+    # 放宽安全策略，允许内联 HTML 标签（特别是 flowchart.htmlLabels）
+    securityLevel: loose
+    # 全局字体（可以换成你站点的中英文字体）
+    fontFamily: '"Source Han Sans", "Noto Sans", sans-serif'
+    # 可选：额外定制整站的 CSS，譬如控制缩放、排版
+    themeCSS: |
+      .mermaid {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    # 针对 flowchart（流程图）的额外配置
+    flowchart:
+      useMaxWidth: true     # 图表宽度自适应
+      htmlLabels: true      # 使用 HTML 渲染节点（可支持多语言）
+    # 针对 sequence diagram（时序图）
+    sequence:
+      showSequenceNumbers: true
+    # 针对 gantt 图
+    gantt:
+      axisFormat: "%Y-%m-%d"
+    # 针对 classDiagram（类图）
+    class:
+      useMaxWidth: true
+
+  # 是否在渲染时把 config 也内联到页面，方便调试
+  inline_config: false
+  # 是否生成一个全局的 <script> 标签引入 mermaid，而不是每个图例都单独插
+  single_script: true
