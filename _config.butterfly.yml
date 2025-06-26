@@ -35,14 +35,9 @@ subtitle:                       # 首页副标题（打字机特效）
   enable: true                  # 是否启用副标题
   effect: true                  # 是否启用打字特效
   loop: true                    # 是否循环播放
-  source: 1                     # 动态来源：1/2/3 对应 typed_option.source
+  source: 2                     # 动态来源：1/2/3 对应 typed_option.source
   sub:                          # 固定副标题文本列表（当不使用动态接口时）
-    - "绿色能源一站式服务伙伴"
-    - "为可持续发展提供清洁动力"
   typed_option:
-    strings:
-      - "绿色能源一站式服务伙伴"
-      - "为可持续发展提供清洁动力"
     typeSpeed: 40               # 打字速度（ms）
     backSpeed: 20               # 删除速度（ms）
     showCursor: true            # 是否显示光标
@@ -52,7 +47,19 @@ subtitle:                       # 首页副标题（打字机特效）
       1: "https://hitokoto.cn/?encode=json"
       2: "https://www.jinrishici.com/all?type=json"
       3: "https://v1.hitokoto.cn/?encode=json"
-
+    strings:
+    - "欢迎来到零碳时代"
+    - "开启智能与绿色共生之旅"
+    - "携手守护地球家园"
+    - "探索可再生能源的无限可能"
+    - "践行绿色低碳的生活方式"
+    - "共创清洁美好的明天"
+    - "让每一步都更环保"
+    - "用科技驱动绿色未来"
+    - "与自然共生，低碳同行"
+    - "点亮明天，节能减排"
+    - "让地球更绿，让未来更亮"
+    - "一起践行碳中和"
 # ======================================
 # 页面头图与封面设置
 # ======================================
@@ -292,13 +299,10 @@ search:
   # 可选值：algolia_search / local_search / docsearch
   # 若不启用搜索则留空
   use: local_search          # 启用本地搜索，请确保安装 searchdb 插件
-
   placeholder: 搜索一下试试吧～  # 搜索框中的提示占位文字
-
   # Algolia 搜索配置（未启用可忽略）
   algolia_search:
     hitsPerPage: 6           # 每页返回的搜索结果条数
-
   # 本地搜索配置（推荐使用 hexo-generator-searchdb 插件）
   local_search:
     preload: true            # 是否在页面加载时预加载搜索索引文件（建议开启）
