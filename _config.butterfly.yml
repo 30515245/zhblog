@@ -284,3 +284,24 @@ canvas_nest:
   zIndex: -1
   count: 99
   mobile: false
+
+# ======================================
+# 搜索功能配置（支持 Algolia 和本地搜索）
+# ======================================
+search:
+  # 可选值：algolia_search / local_search / docsearch
+  # 若不启用搜索则留空
+  use: local_search          # 启用本地搜索，请确保安装 searchdb 插件
+
+  placeholder: 搜索一下试试吧～  # 搜索框中的提示占位文字
+
+  # Algolia 搜索配置（未启用可忽略）
+  algolia_search:
+    hitsPerPage: 6           # 每页返回的搜索结果条数
+
+  # 本地搜索配置（推荐使用 hexo-generator-searchdb 插件）
+  local_search:
+    preload: true            # 是否在页面加载时预加载搜索索引文件（建议开启）
+    top_n_per_article: -1    # 每篇文章最多展示的匹配条数，设为 -1 显示全部匹配
+    unescape: true           # 是否对 HTML 转义字符进行解码（可增强可读性）
+
