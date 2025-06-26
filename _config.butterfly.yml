@@ -4,11 +4,11 @@
 favicon: /img/favicon.png       # 浏览器标签页小图标路径
 
 avatar:                         # 个人头像设置
-  img: https://blogtc.30515245.xyz/20250612142104764.png  # 头像图片地址
+  img: https://blogtc.30515245.xyz/20250626215031995.webp  # 头像图片地址
   effect: false                 # 是否启用头像 Hover 特效
 
 nav:                            # 顶部导航栏设置
-  logo: https://blogtc.30515245.xyz/20250612142104764.png  # 导航栏 Logo
+  logo: https://blogtc.30515245.xyz/20250626215031995.webp  # 导航栏 Logo
   display_title: true           # 是否显示站点名称文字
   fixed: false                  # 导航栏是否固定在顶部
 
@@ -205,25 +205,28 @@ aside:
 error_404:
   enable: true
   subtitle: 页面没找到
-  background: https://blogtc.30515245.xyz/20250613104116053.png
+  background: https://blogtc.30515245.xyz/20250626215031995.webp
 
-# ======================================
-# 文章版权声明
-# ======================================
+# --------------------------------------
+# 文章版权声明配置
+# --------------------------------------
 post_copyright:
-  enable: true
-  author_href: https://blogtc.30515245.xyz/
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  enable: true         # 启用文章版权声明
+  decode: false        # 是否对文章 URL 自动解码
+  author_href: ""      # 作者链接（留空则不渲染）
+  license: "CC BY-NC-SA 4.0"      # 许可证类型
+  license_url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"  # 许可证链接
 
-# ======================================
-# 字数统计与阅读时长
-# ======================================
+
+# --------------------------------------
+# Word Count 插件配置（需安装 hexo-wordcount）
+# --------------------------------------
 wordcount:
-  enable: true
-  post_wordcount: true
-  min2read: true
-  total_wordcount: true
+  enable: false         # 全局开关：启用/禁用插件
+  post_wordcount: true  # 在文章 Meta 显示字数统计
+  min2read: true        # 在文章 Meta 显示预计阅读时长
+  total_wordcount: true # 在侧边栏 WebInfo 显示全站总字数
+
 
 # ======================================
 # 图片灯箱效果
@@ -249,8 +252,8 @@ math:
 # 图片加载错误替换
 # ======================================
 error_img:
-  flink: https://blogtc.30515245.xyz/20250613104116053.png  # 友链图替换
-  post_page: https://blogtc.30515245.xyz/20250613104116053.png  # 文章页替换
+  flink: https://blogtc.30515245.xyz/20250626215031995.webp  # 友链图替换
+  post_page: https://blogtc.30515245.xyz/20250626215031995.webp  # 文章页替换
 
 # ======================================
 # 打字机爆炸动效
@@ -384,4 +387,55 @@ footer:
   # 自定义页脚文本
   custom_text: "绿色能源一站式服务伙伴"
 
+# --------------------------------------
+# Busuanzi 访客统计设置
+# --------------------------------------
+busuanzi:
+  site_uv: true    # 全站独立访客数 (UV)
+  site_pv: true    # 全站页面浏览量 (PV)
+  page_pv: true    # 单页浏览量 (PV)
 
+# --------------------------------------
+# Copy 插件配置
+# --------------------------------------
+copy:
+  enable: true          # 全局开关：启用/禁用复制功能
+  copyright:
+    enable: true       # 复制时是否自动添加版权信息
+    limit_count: 150    # 超过 150 字符时才插入版权信息
+
+# ─── 文章分页配置───
+post_pagination: 2    # 1: 下一篇指向旧文章；2: 下一篇指向新文章；false: 关闭
+
+# --------------------------------------
+# Reward 打赏配置
+# --------------------------------------
+reward:
+  enable: true           # 全局开关：启用/禁用打赏功能
+  text: ""               # 打赏说明文字，留空则不显示
+  QR_code:               # 二维码列表
+    - img: "/img/wechat.jpg"   # 微信二维码图片路径
+      link: ""                # 点击二维码后跳转链接（可选）
+      text: "微信"             # 支付方式文案
+    - img: "/img/alipay.jpg"   # 支付宝二维码图片路径
+      link: ""
+      text: "支付宝"
+
+# --------------------------------------
+# Cloudflare Web Analytics 配置
+# https://www.cloudflare.com/zh-tw/web-analytics/
+# --------------------------------------
+cloudflare_analytics:
+  enable: true        # 是否启用 Cloudflare 统计
+  token: "be171c5e82a24b278c2200b69bd7c3ae"            # 在 Cloudflare Web Analytics 中申请的 site token
+
+# 页面过渡效果
+enter_transitions: true
+
+pwa:
+  enable: true
+  manifest: /img/pwa/manifest.json
+  apple_touch_icon: /img/pwa/apple-touch-icon.png
+  favicon_32_32: /img/pwa/32.png
+  favicon_16_16: /img/pwa/16.png
+  mask_icon: /img/pwa/safari-pinned-tab.svg

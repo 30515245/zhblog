@@ -10,7 +10,7 @@ hexo.extend.filter.register('after_render:html', (str, data) => {
                   color:#fff;
                   font-size:36px;  /* 36px 即 2号字体 */
                   line-height:1.2;">
-         能源声声入归档 基建步步记春秋
+         绿建腾飞 低碳引航
        </h1>`
     );
   }

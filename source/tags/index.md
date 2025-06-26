@@ -1,5 +1,5 @@
 ---
-title: 词汇惊起能源潮 标记汇聚智网心
+title: 一词一义 赋能源建
 date: 2018-01-05 00:00:00
 type: 'tags'
 orderby: name

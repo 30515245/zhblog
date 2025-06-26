@@ -1,5 +1,5 @@
 ---
-title: 画卷铺陈光伏海  图集映照基建魂
+title: 画卷铺陈  映照基建
 top_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
 type: gallery
 comments: false
