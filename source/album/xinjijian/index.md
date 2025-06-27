@@ -1,5 +1,5 @@
 ---
-top_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+top_img: 'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'
 layout: page
 title: 新基建图册
 date: 2025-06-25 22:42:21

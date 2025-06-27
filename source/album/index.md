@@ -1,6 +1,6 @@
 ---
 title: 画卷铺陈  映照基建
-top_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'
+top_img: 'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'
 type: gallery
 comments: false
 aside: false
