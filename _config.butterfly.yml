@@ -65,18 +65,18 @@ subtitle:                       # 首页动态副标题模块（打字机特效�
 # ======================================
 disable_top_img: false          # 是否全局禁用所有页面顶部背景图
 default_top_img: true           # 是否启用默认顶部背景图
-index_img:      'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 首页渐变背景色配置
-archive_img:    'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 归档页渐变背景色配置
-tag_img:        'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 标签页渐变背景色配置
-tag_per_img:    'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 标签详情页渐变背景色配置
-category_img:   'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 分类页渐变背景色配置
-category_per_img: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 分类详情页渐变背景色配置
-footer_img:     'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 页脚区域渐变背景色配置
+index_img:      'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 首页渐变背景色配置
+archive_img:    'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 归档页渐变背景色配置
+tag_img:        'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 标签页渐变背景色配置
+tag_per_img:    'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 标签详情页渐变背景色配置
+category_img:   'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 分类页渐变背景色配置
+category_per_img: 'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 分类详情页渐变背景色配置
+footer_img:     'linear-gradient(180deg, #7BC87B, #81C784, #4DD0E1)'  # 页脚区域渐变背景色配置
 cover:                          # 页面封面显示控制模块
   index_enable: true            # 首页是否显示封面区域
   aside_enable: true            # 侧边栏是否显示封面区域
   archives_enable: true         # 归档页是否显示封面区域
-  default_cover: 'linear-gradient(135deg, #7BC87B, #4CAF50, #009688)'  # 默认封面背景
+  default_cover: 'linear-gradient(315deg, #7BC87B, #66BB6A, #0097A7)'  # 默认封面背景
 toc:                            # 文章目录功能配置模块
   post: true                    # 文章页面是否显示目录
   page: false                   # 普通页面是否隐藏目录
