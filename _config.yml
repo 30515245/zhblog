@@ -1,93 +1,122 @@
-title: 零碳时代  # 网站的标题
-author: 零碳时代
-subtitle: '绿色能源一站式服务伙伴'  # 网站的副标题
-description: '绿色能源一站式服务伙伴'  # 网站的描述信息，用于搜索引擎优化等场景
-language: zh-CN  # 网站使用的语言，这里设置为中文（中国大陆）
-timezone: # 网站的时区设置，为空表示使用默认时区
-# themes/你的主题/_config.yml
-url: https://blog.30515245.xyz
-root: /
-permalink: posts/:abbrlink.html  # 文章永久链接的格式
-permalink_defaults:  # 永久链接的默认设置，此处为空表示使用默认值
-pretty_urls:  # 美化永久链接的设置
-  trailing_index: true  # 设置为 false 可从永久链接中移除尾随的 'index.html'
-  trailing_html: true  # 设置为 false 可从永久链接中移除尾随的 '.html'
-abbrlink:
-  alg: crc16   # 可选 crc16 或 crc32
-  rep: dec     # 可选 dec（十进制）或 hex（十六进制）
+# ======================================
+# 网站基础信息配置 - 核心标识参数
+# ======================================
+title: 零碳时代  # 网站在浏览器标签页和搜索引擎显示的主标题
+author: 零碳时代  # 网站作者信息（用于版权声明和元数据）
+subtitle: '绿色能源一站式服务伙伴'  # 网站副标题（通常显示在标题下方）
+description: '绿色能源一站式服务伙伴'  # 网站内容概述（重要的SEO元素）
+language: zh-CN  # 网站语言设置（影响翻译和地区特性）
+timezone:  # 网站时区设置（留空使用系统默认时区）
 
+# ======================================
+# 网站URL与链接配置 - 路由与美化
+# ======================================
+url: https://blog.30515245.xyz  # 网站完整域名（用于生成绝对链接）
+root: /  # 网站根目录（多站点部署时需修改）
+permalink: posts/:abbrlink.html  # 文章永久链接格式（使用abbrlink插件生成短链接）
+permalink_defaults:  # 永久链接默认参数（保持空使用Hexo默认）
+pretty_urls:  # 美化链接设置（优化SEO和用户体验）
+  trailing_index: true  # 是否保留index.html后缀
+  trailing_html: true  # 是否保留.html文件后缀
+abbrlink:  # abbrlink短链接生成器配置
+  alg: crc16   # 算法选择：crc16或crc32（校验和算法）
+  rep: dec     # 结果表示：dec(十进制)或hex(十六进制)
 
-# Directory  # 目录相关配置的起始注释
-source_dir: source  # 源文件目录，存放博客的原始文件，如文章、图片等
-public_dir: public  # 生成的静态文件目录，用于部署到服务器
-tag_dir: tags  # 标签页面的目录
-archive_dir: archives  # 归档页面的目录
-category_dir: categories  # 分类页面的目录
-code_dir: downloads/code  # 代码文件下载目录
-i18n_dir: :lang  # 多语言文件目录，:lang 表示根据语言自动匹配
-skip_render:  # 跳过渲染的文件或目录，可在此添加具体规则
-# Writing
-new_post_name: :title.md  # 新文章的文件名格式
-default_layout: post  # 新文章的默认布局
-titlecase: false  # 是否将文章标题转换为标题格式
-external_link:
-  enable: true  # 是否在新标签页中打开外部链接
-  field: site  # 外部链接设置应用的范围，这里设置为整个网站
-  exclude: ''  # 排除外部链接设置的规则，为空表示不排除
-filename_case: 0  # 文件名的大小写处理方式，0 表示保持原样
-render_drafts: false  # 是否渲染草稿文章
-post_asset_folder: false  # 是否为每篇文章创建对应的资源文件夹
-relative_link: false  # 是否使用相对链接
+# ======================================
+# 目录结构配置 - 文件系统组织
+# ======================================
+source_dir: source  # 原始文件目录（存放Markdown文章和资源）
+public_dir: public  # 生成的静态文件目录（用于部署）
+tag_dir: tags  # 标签页面存储目录
+archive_dir: archives  # 归档页面存储目录
+category_dir: categories  # 分类页面存储目录
+code_dir: downloads/code  # 代码下载文件存储目录
+i18n_dir: :lang  # 多语言文件目录（:lang自动匹配语言）
+skip_render:  # 跳过渲染的文件/目录（支持通配符）
+
+# ======================================
+# 文章写作配置 - 内容创作规则
+# ======================================
+new_post_name: :title.md  # 新文章默认文件名格式（:title为标题占位符）
+default_layout: post  # 新文章默认布局模板（post/page等）
+titlecase: false  # 是否自动将文章标题转为标题格式（首字母大写）
+external_link:  # 外部链接打开方式配置
+  enable: true  # 是否在新标签页打开外部链接
+  field: site  # 应用范围：site(全站)/post(仅文章)
+  exclude: ''  # 排除规则（留空不排除任何链接）
+filename_case: 0  # 文件名大小写处理：0(保持原样)/1(大写)/2(小写)
+render_drafts: false  # 是否渲染草稿文章（front-matter中draft: true的文章）
+post_asset_folder: false  # 是否为每篇文章创建独立资源文件夹
+relative_link: false  # 是否使用相对链接（多站点部署时使用）
 future: false  # 是否显示未来日期的文章
-syntax_highlighter: highlight.js  # 代码语法高亮工具，这里设置为 highlight.js
-highlight:
+syntax_highlighter: highlight.js  # 代码高亮引擎选择
+highlight:  # highlight.js具体配置
   line_number: false  # 是否显示代码行号
   auto_detect: true  # 是否自动检测代码语言
-  tab_replace: ''  # 用于替换制表符的内容
-  wrap: true  # 是否对代码进行换行处理
-  hljs: true  # 是否使用 highlight.js 的新 API
-prismjs:
-  preprocess: true  # 是否在高亮前对代码进行预处理
-  line_number: true  # 是否显示代码行号
-  tab_replace: ''  # 用于替换制表符的内容
+  tab_replace: ''  # 制表符替换字符（用于统一缩进）
+  wrap: true  # 是否自动换行
+  hljs: true  # 是否使用highlight.js新API
+prismjs:  # prismjs高亮引擎备用配置
+  preprocess: true  # 是否预处理代码
+  line_number: true  # 是否显示行号
+  tab_replace: ''  # 制表符替换
 
+# ======================================
+# 首页文章列表配置 - 内容展示规则
+# ======================================
 index_generator:
-  path: ''  # 博客首页的根路径
-  per_page: 9 # 每页显示的文章数量
-  order_by: -date  # 文章排序规则，按日期降序排列
+  path: ''  # 首页路径（留空为根路径）
+  per_page: 9 # 每页显示文章数量
+  order_by: -date  # 排序规则：-date(降序)/+date(升序)
 
-# Category & Tag
-default_category: uncategorized  # 文章的默认分类
-category_map:  # 分类映射，可用于自定义分类名称
-tag_map:  # 标签映射，可用于自定义标签名称
+# ======================================
+# 分类与标签配置 - 内容组织系统
+# ======================================
+default_category: uncategorized  # 文章默认分类
+category_map:  # 分类别名映射（key为显示名，value为实际名）
+tag_map:  # 标签别名映射（同上）
 
-# Metadata elements
-meta_generator: true  # 是否在页面中生成 meta 标签的生成器信息
+# ======================================
+# 元数据配置 - 搜索引擎优化
+# ======================================
+meta_generator: true  # 是否在页面中显示Hexo生成器信息
 
-# Date / Time format
-date_format: YYYY-MM-DD  # 日期的显示格式
-time_format: HH:mm:ss  # 时间的显示格式
-updated_option: 'mtime'  # 文章更新时间的选项，这里设置为使用文件修改时间
+# ======================================
+# 日期时间格式配置 - 显示样式
+# ======================================
+date_format: YYYY-MM-DD  # 日期显示格式（Moment.js格式）
+time_format: HH:mm:ss  # 时间显示格式
+updated_option: 'mtime'  # 更新时间获取方式：mtime(文件修改时间)/date(文章日期)
 
-# Pagination
-per_page: 9  # 每页显示的文章数量，用于分页
-pagination_dir: page  # 分页目录的名称
+# ======================================
+# 分页系统配置 - 内容导航
+# ======================================
+per_page: 9  # 每页文章数量（与index_generator共享配置）
+pagination_dir: page  # 分页目录名称（生成page/1.html等）
 
-# Include / Exclude file(s)
-include:  # 需要包含的文件或目录规则，应用于 source 文件夹
-exclude:  # 需要排除的文件或目录规则，应用于 source 文件夹
-ignore:  # 需要忽略的文件或目录规则
+# ======================================
+# 文件包含排除规则 - 构建过程控制
+# ======================================
+include:  # 强制包含的文件/目录（支持通配符）
+exclude:  # 强制排除的文件/目录（优先于.gitignore）
+ignore:  # 忽略的文件/目录（类似.gitignore）
 
-# Extensions
-theme: butterfly  # 网站使用的主题
+# ======================================
+# 主题与扩展配置 - 网站外观
+# ======================================
+theme: butterfly  # 使用的Hexo主题名称（需安装对应主题）
 
-
+# ======================================
+# 部署配置 - 网站发布
+# ======================================
 deploy:
-  type: git  # 部署方式，这里设置为使用 Git
-  repo: git@github.com:30515245/zhblog.git  # 部署的 Git 仓库地址
-  branch: gh-pages  # 部署的 Git 分支
+  type: git  # 部署方式：git/sftp等
+  repo: git@github.com:30515245/zhblog.git  # Git仓库地址
+  branch: gh-pages  # 部署分支（GitHub Pages专用分支）
 
+# ======================================
+# APlayer音乐播放器配置 - 多媒体功能
+# ======================================
 aplayer:
-  meting: true  # 是否启用 Meting 功能
-  asset_inject: false  # 是否自动注入资源
-
+  meting: true  # 是否启用Meting音乐服务集成
+  asset_inject: true  # 是否自动注入播放器资源（手动管理时设为false）
