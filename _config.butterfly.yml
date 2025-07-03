@@ -6,10 +6,10 @@
 # ======================================
 favicon: /img/favicon.png       # 浏览器标签页左上角小图标文件路径
 avatar:                         # 个人头像相关设置模块
-  img: https://blogtc.30515245.xyz/20250626215031995.webp  # 头像图片的网络地址
+  img: https://blogtc.30515245.xyz/20250703154155900.webp  # 头像图片的网络地址
   effect: false                 # 鼠标悬停时是否启用头像动画特效
 nav:                            # 顶部导航栏整体配置模块
-  logo: https://blogtc.30515245.xyz/20250626215031995.webp  # 导航栏Logo图片的网络地址
+  logo: https://blogtc.30515245.xyz/20250703154155900.webp  # 导航栏Logo图片的网络地址
   display_title: true           # 是否在导航栏显示站点名称文字
   fixed: false                  # 滚动页面时导航栏是否固定在顶部
 menu:                           # 顶部菜单栏路由配置模块
@@ -47,7 +47,7 @@ subtitle:                       # 首页动态副标题模块（打字机特效�
       2: "https://www.jinrishici.com/all?type=json"
       3: "https://v1.hitokoto.cn/?encode=json"
     strings:                    # 手动配置的副标题文本数组
-    - "欢迎来到零碳时代"
+    - "欢迎来到明途雁"
     - "开启智能与绿色共生之旅"
     - "携手守护地球家园"
     - "探索可再生能源的无限可能"
@@ -161,7 +161,7 @@ aside:                          # 侧边栏全局配置模块
     category: true             # 显示分类列表
   card_author:                 # 作者信息卡片配置
     enable: true
-    description: 用绿色改变世界  # 作者简介文本内容
+    description: 无碳能源综合服务  # 作者简介文本内容
     button:                     # 作者卡片交互按钮配置
       enable: true
       icon: iconfont icon-weixin # 按钮图标类名
@@ -169,7 +169,7 @@ aside:                          # 侧边栏全局配置模块
       link: https://blogtc.30515245.xyz/20250621151601127.webp  # 按钮链接地址
   card_announcement:           # 公告卡片配置
     enable: true
-    content: 欢迎来到零碳时代   # 公告文本内容
+    content: 欢迎来到明途雁   # 公告文本内容
   card_recent_post:            # 最近文章卡片配置
     enable: true
     limit: 5                    # 显示最近文章数量
@@ -191,7 +191,7 @@ aside:                          # 侧边栏全局配置模块
 error_404:                      # 404错误页面配置模块
   enable: true                  # 是否启用自定义404页面
   subtitle: 页面没找到          # 404页面副标题文本
-  background: https://blogtc.30515245.xyz/20250626215031995.webp  # 背景图片地址
+  background: https://blogtc.30515245.xyz/20250703154155900.webp  # 背景图片地址
 
 # ======================================
 # 文章版权声明配置 - 知识产权保护
@@ -234,8 +234,8 @@ math:                           # 数学公式渲染配置模块
 # 图片加载错误替换配置 - 异常处理
 # ======================================
 error_img:                      # 图片加载失败替换配置
-  flink: https://blogtc.30515245.xyz/20250626215031995.webp  # 友链图片加载失败替换图
-  post_page: https://blogtc.30515245.xyz/20250626215031995.webp  # 文章页图片加载失败替换图
+  flink: https://blogtc.30515245.xyz/20250703154155900.webp  # 友链图片加载失败替换图
+  post_page: https://blogtc.30515245.xyz/20250703154155900.webp  # 文章页图片加载失败替换图
 
 # ======================================
 # 打字机爆炸动效配置 - 交互特效
@@ -339,7 +339,7 @@ footer:                         # 页脚信息配置模块
   copyright:                    # 版权信息配置
     enable: false               # 是否显示主题/框架版权
     version: false              # 是否显示版本号
-  custom_text: "绿色能源一站式服务伙伴"  # 自定义页脚文本内容
+  custom_text: "无碳能源综合服务"  # 自定义页脚文本内容
 
 # ======================================
 # Busuanzi访客统计配置 - 流量分析
