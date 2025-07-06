@@ -119,4 +119,16 @@ deploy:
 # ======================================
 aplayer:
   meting: true  # 是否启用Meting音乐服务集成
-  asset_inject: true  # 是否自动注入播放器资源（手动管理时设为false）
+  asset_inject: true  # 
+  
+# ======================================
+# hexo-auto-backup
+# ======================================
+  autobackup:
+  enable: true              # 启用自动备份
+  rclonepath:               # Rclone 可执行文件所在目录
+  expire: 30                # 本地或云端保留天数，超过将自动删除
+  type:                     # 备份目标列表（按顺序尝试）
+    - local: "F:\backLtblog"               # local 为 rclone remote 名称，值为目标路径
+    - onedrive:                        # onedrive remote，下级路径或存储桶
+    - googledrive:                     # googledrive remote，下级目录
