@@ -107,7 +107,7 @@ valine:
   appId: QvInG0iJAXI8Vr3CdLsUwRo5-gzGzoHsz  # LeanCloud应用的App ID
   appKey: xriETHbw2vAcKhnyCeqYmR9Y          # LeanCloud应用的App Key
   avatar: monsterid            # 默认访客头像样式（monsterid等预设值）
-  visitor: false               # 是否显示访客统计数据
+  visitor: true               # 是否显示访客统计数据
 
 # ======================================
 # 外观模式配置 - 界面显示风格
@@ -344,7 +344,7 @@ footer:                         # 页脚信息配置模块
 # ======================================
 # Busuanzi访客统计配置 - 流量分析
 # ======================================
-busuanzi:                       # 不蒜子访客统计配置
+busuanzi:                        # 不蒜子访客统计配置
   site_uv: true                 # 是否显示全站独立访客数(UV)
   site_pv: true                 # 是否显示全站页面浏览量(PV)
   page_pv: true                 # 是否显示单页浏览量(PV)
